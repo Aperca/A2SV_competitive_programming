@@ -1,0 +1,14 @@
+class Solution:
+    def commonChars(self, words: List[str]) -> List[str]:
+        res = list(words[0])
+        i = 1
+        for word in words[i:]:
+            temp= []
+            for c in word:
+                if c in res:
+                    temp.append(c)
+                    res.remove(c)
+            i += 1
+            res = temp
+        
+        return res
